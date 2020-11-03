@@ -7,7 +7,7 @@ class Model(robustml.model.Model):
   def __init__(self, sess):
     self._model = model.Model('eval')
 
-    saver = tf.train.Saver()
+    saver = tf.compat.v1.train.Saver()
     checkpoint = tf.train.latest_checkpoint('models/model_0')
     saver.restore(sess, checkpoint)
 
